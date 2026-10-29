@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Links · Alpine Archiev</title>
+<meta name="description" content="ARCHIEV CIRCLE, Gipfel-Fahne, Gipfel-Mission und Shop von Alpine Archiev.">
+<style>
+  :root {
+    --paper: #f6ede7;
+    --card: #fbf6f2;
+    --ink: #0d0d0c;
+    --grey: #4a463d;
+    --green: #1d4930;
+    --bar: #2e583c;
+    --rule: #ded4cc;
+    --on-green: #f6ede7;
+    --font: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font);
+    font-weight: 700;
+    min-height: 100vh;
+    padding: calc(env(safe-area-inset-top, 0px) + 40px) 20px calc(env(safe-area-inset-bottom, 0px) + 32px);
+  }
+  body::before {
+    content: "";
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 6px; background: var(--bar);
+  }
+  main { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .kicker { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
+  h1 { font-size: 40px; line-height: 1.02; letter-spacing: -1.4px; margin-top: 2px; }
+  .lead { font-size: 16px; line-height: 1.4; color: var(--grey); margin-bottom: 10px; }
+  a.card {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 18px 18px 16px;
+    background: var(--card);
+    border: 2px solid var(--rule);
+    border-radius: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  a.card:active { transform: scale(.99); }
+  a.card:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+  a.card .t { font-size: 19px; letter-spacing: -.3px; display: flex; justify-content: space-between; gap: 12px; }
+  a.card .t span:last-child { color: var(--green); }
+  a.card .d { font-size: 14px; line-height: 1.4; color: var(--grey); font-weight: 600; }
+  a.card.main { background: var(--green); border-color: var(--green); color: var(--on-green); }
+  a.card.main .t span:last-child, a.card.main .d { color: var(--on-green); }
+  a.card.main .d { opacity: .88; }
+  .tag {
+    align-self: flex-start;
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 999px;
+    background: var(--on-green); color: var(--green);
+    margin-bottom: 4px;
+  }
+  footer { margin-top: 18px; font-size: 13px; color: var(--grey); font-weight: 600; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  footer a { color: var(--grey); }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Alpine Archiev</div>
+  <h1>alle links.</h1>
+  <p class="lead">Geprüfte Outdoor-Ware, die Gipfel-Mission – und die erste eigene Mütze.</p>
+
+  <a class="card main" href="https://whatsapp.com/channel/0029Vb7YEbNFXUuYnWmGUj16">
+    <span class="tag">Neu: die Mütze</span>
+    <span class="t"><span>ARCHIEV CIRCLE</span><span>→</span></span>
+    <span class="d">Termin und Preis der ersten Serie gibt’s zuerst hier. WhatsApp-Kanal, kostenlos – deine Nummer sieht dort niemand.</span>
+  </a>
+
+  <a class="card" href="https://alpinearchiev.de/products/gipfel-fahne">
+    <span class="t"><span>Gipfel-Fahne · 5,90 €</span><span>→</span></span>
+    <span class="d">Inklusive Versand. Fahne mit auf den Gipfel, Foto schicken – und du bist im Team.</span>
+  </a>
+
+  <a class="card" href="https://gipfel.alpinearchiev.de/">
+    <span class="t"><span>Gipfel-Mission</span><span>→</span></span>
+    <span class="d">Ranking, Karte und Gipfelbuch.</span>
+  </a>
+
+  <a class="card" href="https://alpinearchiev.de/">
+    <span class="t"><span>Shop</span><span>→</span></span>
+    <span class="d">Geprüfte Secondhand-Outdoor-Ware.</span>
+  </a>
+
+  <footer>
+    <span>@alpinearchiev auf TikTok</span>
+    <a href="https://alpinearchiev.de/policies/legal-notice">Impressum</a>
+    <a href="https://alpinearchiev.de/policies/privacy-policy">Datenschutz</a>
+  </footer>
+</main>
+</body>
+</html>
