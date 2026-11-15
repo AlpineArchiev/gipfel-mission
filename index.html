@@ -132,7 +132,10 @@ section { padding-block: 34px; border-top: 2px solid var(--rule); }
 .chip.land { flex: 1 1 auto; min-width: calc(33% - 8px); text-align: left; padding: 9px 11px; font-size: 15px; border-color: var(--ink); }
 .chip.land small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .06em; margin-top: 3px; color: var(--grey); font-variant-numeric: tabular-nums; }
 .chip.land[aria-pressed="true"] small { color: var(--paper); opacity: .85; }
-.chip:focus-visible, .more:focus-visible, .back:focus-visible, a.row:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.melden { display: inline-block; margin-top: 12px; font-weight: 700; font-size: 15px; padding: 11px 16px; background: var(--green); color: var(--paper); text-decoration: none; border: 2px solid var(--green); border-radius: 0; }
+.melden:hover { background: var(--ink); border-color: var(--ink); }
+.melden-row { margin: 18px 0 0; }
+.melden:focus-visible, .chip:focus-visible, .more:focus-visible, .back:focus-visible, a.row:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
 .peaks { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--rule); }
 .peaks li { border-bottom: 1px solid var(--rule); }
 .peaks a.row { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 9px 0; color: inherit; text-decoration: none; }
@@ -245,6 +248,7 @@ a { color: var(--green); }
       <div class="stat"><b id="s-athletes">0</b><span>Athleten</span></div>
       <div class="stat"><b id="s-high">–</b><span>höchster Gipfel</span></div>
     </div>
+    <p class="melden-row"><a class="melden" href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" target="_blank" rel="noopener">Gipfel melden →</a></p>
   </header>
 
   <section>
@@ -261,7 +265,7 @@ a { color: var(--green); }
     <ol class="steps">
       <li><span class="n">1</span><div><b>Fahne mit auf den Berg</b><p>Sie wiegt nichts. Sie gehört in jeden Rucksack, auf jede Tour. Noch keine? Die gibt es für 5,90 € inklusive Versand <a href="https://alpinearchiev.de/products/gipfel-fahne" target="_blank" rel="noopener">im Shop</a>.</p></div></li>
       <li><span class="n">2</span><div><b>Oben ein Foto oder ein Clip mit der Fahne</b><p>Gipfelkreuz, Fahne, du. Das ist der Nachweis, nichts anderes zählt. Danach kommt die Fahne wieder in den Rucksack.</p></div></li>
-      <li><span class="n">3</span><div><b>Schicken</b><p>Per Nachricht an <span class="handle">@alpinearchiev</span> auf TikTok oder Instagram: Gipfelname, Höhe, Datum, Foto. Sag dazu, ob dein Foto in die Galerie darf.</p></div></li>
+      <li><span class="n">3</span><div><b>Melden</b><p>Tipp auf „Gipfel melden“, gib Gipfel, Foto und TikTok-Name ein. Sebastian prüft die Meldung, danach steht dein Gipfel hier.</p><a class="melden" href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" target="_blank" rel="noopener">Gipfel melden →</a></div></li>
       <li><span class="n">4</span><div><b>Punkte kassieren</b><p>Der Gipfel steht im Gipfelbuch, die Punkte in der Rangliste, dein Foto auf der Seite des Bergs. Aktualisiert wird jedes Wochenende, zusammen mit dem Wochen-Video.</p></div></li>
     </ol>
     <table class="pts">
@@ -271,8 +275,8 @@ a { color: var(--green); }
     <div class="rules">
       <b>Die Regeln</b>
       <p>Es zählt jeder Gipfel ab 1.500 m, egal wo auf der Welt und egal ob Wanderung, Klettersteig, Hochtour oder Skitour. Jeder Gipfel zählt pro Athlet einmal. Die großen Gipfel der Welt, vom Mont Blanc bis zum Kilimandscharo, bringen Punkte und kommen zusätzlich als Legende in die Galerie.</p>
-      <p>Ohne Fahne auf dem Foto keine Punkte. Datum und Höhe gibst du an, geprüft wird jede Meldung.</p>
-      <p>Dein Foto steht auf der Seite des Bergs und in deinem Profil. In die Galerie oben kommt es nur, wenn du zustimmst. Bist du unter 18, brauchen wir für jedes Foto das OK deiner Eltern.</p>
+      <p>Ohne Fahne auf dem Foto keine Punkte. Höhe und Datum tragen wir ein, geprüft wird jede Meldung.</p>
+      <p>Dein Foto steht auf der Seite des Bergs, in deinem Profil und in der Galerie. Willst du das nicht, schreib kurz an <span class="handle">@alpinearchiev</span>. Bist du unter 18, brauchen wir für jedes Foto das OK deiner Eltern.</p>
       <p>Die Fahne kommt wieder mit runter. Sie wird nirgends aufgehängt oder zurückgelassen, oben bleibt nichts.</p>
       <p>Sicherheit vor Punkten. Kein Gipfel ist ein Risiko wert, im Winter erst recht. Umdrehen ist immer okay.</p>
       <p>Wenn du den Clip postest, markiere <span class="handle">@alpinearchiev</span>. Die besten Clips landen im Wochen-Video.</p>
@@ -350,7 +354,7 @@ a { color: var(--green); }
     <div class="kicker">Sammel-Challenge</div>
     <h2>die gipfel.</h2>
     <p>Fünf Gebiete, alle deutschsprachigen Berge: Deutschland komplett mit allen 278 Zweitausendern, Liechtenstein mit allen bekannten Gipfeln, dazu die Klassiker in Österreich, Südtirol und der Schweiz, von den 48 Schweizer Viertausendern bis zum Hausberg. Jeder Gipfel ab 1.500 m, den jemand aus dem Team meldet, kommt dazu. Als Team haben wir <b id="c-done">0</b> von <b id="c-total">0</b> abgehakt. Tipp auf einen Berg für seine Seite.</p>
-    <p><b>Wichtig:</b> Die Liste ist nur die Sammel-Challenge. Punkte gibt es für jeden Gipfel ab 1.500 m in den fünf Gebieten, auch wenn er hier nicht steht. Gipfelname und Höhe schickst du einfach mit dem Foto mit, dann wird er eingetragen und kommt mit auf die Liste.</p>
+    <p><b>Wichtig:</b> Die Liste ist nur die Sammel-Challenge. Punkte gibt es für jeden Gipfel ab 1.500 m in den fünf Gebieten, auch wenn er hier nicht steht. Melde ihn einfach über „Gipfel melden“, dann wird er eingetragen und kommt mit auf die Liste.</p>
     <div class="chips lands" id="lands" role="group" aria-label="Gebiet"></div>
     <div class="tools"><input id="q" type="search" placeholder="Gipfel suchen, in allen fünf Gebieten …" aria-label="Gipfel suchen" autocomplete="off"></div>
     <div class="chips" id="chips" role="group" aria-label="Region"></div>
@@ -390,9 +394,10 @@ a { color: var(--green); }
       <p><strong>Keine Cookies, kein Tracking</strong><br>Die Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Schriften oder Skripte von anderen Servern. Die PLZ-Suche rechnet auf deinem Gerät, deine PLZ wird weder übertragen noch gespeichert.</p>
       <p><strong>Athleten auf dieser Seite</strong><br>Wer eine Fahne der Gipfel-Mission hat, gekauft oder geschenkt, steht mit Vornamen (bei gleichen Vornamen mit dem ersten Buchstaben des Nachnamens), TikTok- oder Instagram-Namen und den gemeldeten Gipfeln im Team und in der Rangliste. Dafür ist die Fahne da. Rechtsgrundlage ist die Teilnahme an der Gipfel-Mission (Art. 6 Abs. 1 lit. b DSGVO) und unser berechtigtes Interesse an einer gemeinsamen Rangliste (Art. 6 Abs. 1 lit. f DSGVO). Willst du nicht im Team stehen, schreib kurz an @alpinearchiev oder per E-Mail, dann nehmen wir dich umgehend raus. Unter 18-Jährige stehen nur mit Vornamen und ohne Profil-Link da, bis die Eltern zustimmen.</p>
       <p><strong>Fotos und Karte</strong><br>Wer uns ein Gipfelfoto für die Mission schickt, ist damit einverstanden, dass es in der Galerie und auf der Seite des Bergs erscheint – dafür ist es da. Willst du das nicht, schreib kurz an @alpinearchiev oder per E-Mail, dann bleibt es offline oder wir nehmen es umgehend runter. Fotos von unter 18-Jährigen zeigen wir nur mit dem OK der Eltern. Auf die Karte kommst du nur, wenn du „Karte ja“ schreibst, und zwar mit der ungefähren Gegend (Landkreis oder Bezirk, nie die Adresse). Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO): beim Foto durch das Schicken, bei der Karte durch dein „Karte ja“. Du kannst sie jederzeit per Nachricht an @alpinearchiev oder per E-Mail widerrufen, dann nehmen wir Foto und Kartenpunkt umgehend von der Seite.</p>
+      <p><strong>Gipfel melden (Formular)</strong><br>Das Formular „Gipfel melden“ läuft über Notion (Notion Labs, Inc., USA). Was du dort einträgst, also Gipfel, Foto und TikTok-Name, speichert Notion für uns, damit Sebastian die Meldung prüfen kann. Rechtsgrundlage ist deine Einwilligung durch das Absenden (Art. 6 Abs. 1 lit. a DSGVO). Notion verarbeitet die Daten auch in den USA, dafür gelten die EU-Standardvertragsklauseln. Abgelehnte Meldungen löschen wir. Auf dieser Seite ist das Formular nur verlinkt, ab dem Antippen gelten zusätzlich die <a href="https://www.notion.com/help/privacy" target="_blank" rel="noopener">Datenschutz-Infos von Notion</a>.</p>
       <p><strong>Links zu TikTok und Instagram</strong><br>Erst wenn du einen Link antippst, kommst du auf die jeweilige Plattform. Ab dann gilt deren Datenschutzerklärung.</p>
       <p><strong>Deine Rechte</strong><br>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel beim Bayerischen Landesamt für Datenschutzaufsicht.</p>
-      <p>Stand: Oktober 2026</p>
+      <p>Stand: November 2026</p>
     </details>
     <p class="src">Karte: Natural Earth · Grenze Südtirol: ISTAT über openpolis · Postleitzahlen: GeoNames (CC BY 4.0)</p>
   </footer>
@@ -410,7 +415,8 @@ a { color: var(--green); }
     <ul class="gl" id="sh-liste" hidden></ul>
     <div class="rules" id="sh-rules">
       <b>So kommst du hier rein</b>
-      <p>Fahne mit auf den Gipfel, oben ein Foto mit Gipfelkreuz, Fahne und dir. Dann Gipfelname, Höhe und Datum an <span class="handle">@alpinearchiev</span>. Sag dazu, ob dein Foto hier rein darf.</p>
+      <p>Fahne mit auf den Gipfel, oben ein Foto mit Gipfelkreuz, Fahne und dir. Dann über „Gipfel melden“ Gipfel, Foto und TikTok-Name schicken.</p>
+      <p><a class="melden" href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" target="_blank" rel="noopener">Gipfel melden →</a></p>
       <p>Noch keine Fahne? Die gibt es für 5,90 € inklusive Versand <a href="https://alpinearchiev.de/products/gipfel-fahne" target="_blank" rel="noopener">im Shop</a>.</p>
     </div>
   </div>
