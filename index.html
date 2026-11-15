@@ -34,7 +34,7 @@ h1,h2,h3{text-wrap:balance}
 .app{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 10px;background:rgba(243,245,242,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .app{padding-left:max(16px,calc((100% - 720px) / 2 + 14px));padding-right:max(16px,calc((100% - 720px) / 2 + 14px))}
 .app .t{display:flex;flex-direction:column;gap:1px;min-width:0}
-.app .t b{font:900 22px/1.05 var(--disp);letter-spacing:-.03em}
+.app .t b,.app .t h1{margin:0;font:900 22px/1.05 var(--disp);letter-spacing:-.03em}
 .app .t span{font-size:12px;font-weight:600;color:var(--stone)}
 .app .cta{flex:none;min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;border-radius:22px;background:var(--navy);color:#fff;font-weight:800;font-size:14px;text-decoration:none}
 .app .cta i{width:8px;height:8px;border-radius:50%;background:var(--sun);display:inline-block}
@@ -86,6 +86,11 @@ h1,h2,h3{text-wrap:balance}
 .ringtxt .chip-s{align-self:flex-start;background:var(--sun);font-size:11px;font-weight:800;padding:4px 8px;border-radius:8px}
 .ringtxt b{font:900 21px/1.08 var(--disp);letter-spacing:-.02em}
 .ringtxt p{margin:0;font-size:13px;line-height:1.45;color:var(--stone)}
+.ringstats{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ringstats div{border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.ringstats div:nth-child(1){background:var(--ice-t)}.ringstats div:nth-child(2){background:var(--sun-t)}.ringstats div:nth-child(3){background:var(--apr-t)}
+.ringstats b{font:900 20px/1.1 var(--disp);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ringstats span{font-size:11px;font-weight:600;color:var(--stone)}
 
 .podium{background:var(--navy);color:#fff;border-radius:24px;padding:18px 16px 0;margin:0 0 14px;overflow:hidden}
 .podium .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -352,7 +357,7 @@ footer .src{font-size:12px;margin:16px 0 0}
 <body>
 
 <header class="app">
-  <div class="t"><b>Gipfel-Mission</b><span>Alpine Archiev · Stand <span id="app-stand"></span></span></div>
+  <div class="t"><h1>Gipfel-Mission</h1><span id="app-sub">Alpine Archiev</span></div>
   <a class="cta" href="https://alpinearchiev.de/products/gipfel-fahne" target="_blank" rel="noopener"><i></i>Fahne holen</a>
 </header>
 
@@ -361,39 +366,26 @@ footer .src{font-size:12px;margin:16px 0 0}
     <a class="story add" href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" target="_blank" rel="noopener"><span class="ring"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e1210" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span class="n">Melden</span></a>
   </nav>
 
-  <section class="hero" id="start">
-    <svg class="hero-art" viewBox="0 0 360 92" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <circle class="sun" cx="252" cy="64" r="27" fill="#cfe6d6"/>
-      <polygon points="0,92 58,54 92,72 148,30 204,66 250,46 300,76 360,50 360,92" fill="#8fbf9f" opacity=".3"/>
-      <polygon points="0,92 40,76 90,60 130,78 180,56 230,82 280,64 330,84 360,74 360,92" fill="#5d9c74" opacity=".42"/>
-      <polygon points="0,92 30,86 70,82 120,88 160,80 210,90 260,84 310,90 360,86 360,92" fill="#1d4930"/>
-    </svg>
-    <div class="kicker">Alpine Archiev · Gipfel-Mission</div>
-    <h1>jeder gipfel zählt.</h1>
-    <p class="sub">Eine Fahne, ein Team: Jeder Gipfel ab 1.500 m bringt Punkte, je höher, desto mehr, egal ob in Bayern, in Tirol oder in Marokko. Die großen Gipfel der Welt, vom Mont Blanc bis zum Kilimandscharo, kommen zusätzlich als Legenden in die Galerie.</p>
-    <div class="stats">
-      <div class="stat"><b id="s-points">0</b><span>Punkte im Team</span></div>
-      <div class="stat"><b id="s-asc">0</b><span>Besteigungen</span></div>
-      <div class="stat"><b id="s-athletes">0</b><span>Athleten</span></div>
-      <div class="stat"><b id="s-high">–</b><span>höchster Gipfel</span></div>
-    </div>
-    <p class="melden-row"><a class="melden" href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" target="_blank" rel="noopener">Gipfel melden →</a></p>
-  </section>
-
-  <section class="card-s ringcard" id="teamziel" aria-label="Team-Ziel">
+  <section class="card-s ringcard" id="start" aria-label="Team-Ziel">
     <div class="ringbox">
       <svg width="122" height="122" viewBox="0 0 122 122" aria-hidden="true">
         <defs><linearGradient id="ringverlauf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b8d9c2"/><stop offset="55%" stop-color="#5d9c74"/><stop offset="100%" stop-color="#1d4930"/></linearGradient></defs>
         <circle cx="61" cy="61" r="52" fill="none" stroke="#edf1ee" stroke-width="12"/>
         <circle id="r-prog" class="prog" cx="61" cy="61" r="52" fill="none" stroke="url(#ringverlauf)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
       </svg>
-      <div class="c"><b id="r-m">0</b><span>Meter zusammen</span></div>
+      <div class="c"><b id="r-m">0</b><span>Meter</span></div>
     </div>
     <div class="ringtxt">
       <span class="chip-s">Team-Ziel</span>
       <b id="r-goal">Gipfelhöhe des Teams</b>
-      <p>Jeder Gipfel ab 1.500 m zählt mit – auch deiner.</p>
+      <p id="r-txt">Jeder Gipfel ab 1.500 m zählt mit – auch deiner.</p>
     </div>
+    <div class="ringstats">
+      <div><b id="s-athletes">0</b><span>Athleten</span></div>
+      <div><b id="s-asc">0</b><span>Gipfel</span></div>
+      <div><b id="r-berge">0</b><span>Berge</span></div>
+    </div>
+    <span id="s-points" hidden></span><span id="s-high" hidden></span>
   </section>
 
   <section class="podium" id="podest" aria-labelledby="pod-h">
@@ -566,7 +558,7 @@ footer .src{font-size:12px;margin:16px 0 0}
 </div>
 
 <nav class="tabbar" aria-label="Schnell zu">
-  <a href="#start" data-t="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l6-10 4 6 3-4 5 8z"/></svg>Start</a>
+  <a href="#top" data-t="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l6-10 4 6 3-4 5 8z"/></svg>Start</a>
   <a href="#rangliste" data-t="rangliste"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4"/></svg>Rangliste</a>
   <a href="https://organic-tire-06b.notion.site/5043a919e1a74a7997836d90b7930e95" class="mid" target="_blank" rel="noopener"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>Gipfel melden</a>
   <a href="#karte" data-t="karte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Karte</a>
@@ -1163,7 +1155,8 @@ footer .src{font-size:12px;margin:16px 0 0}
   const neuer = (a, b) => (iso(b) || '0').localeCompare(iso(a) || '0') || pos.get(b) - pos.get(a);
   const ziel = a => (a.legend_id && legById.has(a.legend_id)) ? '#l-' + encodeURIComponent(a.legend_id) : (a.peak_id != null ? '#g-' + encodeURIComponent(a.peak_id) : '#galerie');
   const $ = id => document.getElementById(id);
-  if ($('app-stand')) $('app-stand').textContent = D.stand || '';
+  const sm = /^(\d{1,2}\.\d{1,2}\.)(\d{4})$/.exec(D.stand || '');
+  if ($('app-sub')) $('app-sub').textContent = sm ? 'Saison ' + sm[2] + ' · Stand ' + sm[1] : 'Stand ' + (D.stand || '');
 
   // Stories: die neuesten Gipfelfotos, ein gemeinsames Foto nur einmal
   const st = $('stories');
@@ -1193,6 +1186,10 @@ footer .src{font-size:12px;margin:16px 0 0}
   const EV = 8849, total = REAL.reduce((s, a) => s + (a.h || 0), 0);
   const nEv = Math.floor(total / EV), rest = (nEv + 1) * EV - total, anteil = (total - nEv * EV) / EV;
   if ($('r-goal')) $('r-goal').textContent = 'Noch ' + fmt(rest) + ' m bis ' + (nEv + 1) + ' × Everest';
+  const ZW = ['Null', 'Eins', 'Zwei', 'Drei', 'Vier', 'Fünf', 'Sechs', 'Sieben', 'Acht', 'Neun', 'Zehn', 'Elf', 'Zwölf', 'Dreizehn', 'Vierzehn', 'Fünfzehn', 'Sechzehn', 'Siebzehn', 'Achtzehn', 'Neunzehn', 'Zwanzig'];
+  if ($('r-txt') && rest <= 1500) $('r-txt').textContent = 'Der nächste Gipfel ab 1.500 m macht die ' + (ZW[nEv + 1] || (nEv + 1)) + ' voll.';
+  const berge = new Set(REAL.map(a => a.peak_id != null ? 'g' + a.peak_id : (a.legend_id ? 'l' + a.legend_id : 'n' + a.peak))).size;
+  if ($('r-berge')) $('r-berge').textContent = fmt(berge);
   const ring = $('r-prog'), rm = $('r-m');
   const zaehle = (el, ziel, dauer) => {
     if (RM) { el.textContent = fmt(ziel); return; }
@@ -1255,17 +1252,17 @@ footer .src{font-size:12px;margin:16px 0 0}
   }
 
   // Einblenden beim Scrollen, Zähler, Podest
-  const zahlen = ['s-points', 's-asc', 's-athletes'].map($).filter(Boolean);
+  const zahlen = ['s-athletes', 's-asc', 'r-berge'].map($).filter(Boolean);
   if (!IO || RM) { ringLos(); return; }
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     const t = e.target; io.unobserve(t); t.classList.add('in');
-    if (t.id === 'teamziel') ringLos();
+    if (t.id === 'start') ringLos();
     if (t.id === 'podest') t.classList.add('go');
     if (t.id === 'start') zahlen.forEach(el => { const z = parseInt(el.textContent.replace(/\D/g, ''), 10); if (z > 0) zaehle(el, z, 1600); });
   }), { threshold: .15 });
   document.querySelectorAll('.blk, .card-s, .chall, .cta-card').forEach(el => el.classList.add('rv'));
-  document.querySelectorAll('.rv, #podest, #teamziel, #start').forEach(el => io.observe(el));
+  document.querySelectorAll('.rv, #podest, #start').forEach(el => io.observe(el));
 
   // Leiste unten: aktiven Bereich markieren
   const tabs = new Map([...document.querySelectorAll('.tabbar a[data-t]')].map(a => [a.dataset.t, a]));
